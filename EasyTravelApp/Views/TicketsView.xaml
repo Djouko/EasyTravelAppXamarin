@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyTravelApp.Views.TicketsView"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title="TicketsView"
+             Shell.NavBarIsVisible="False"
+             FlowDirection="LeftToRight"
+             BackgroundColor="{StaticResource Secondary}">
+
+    <Grid>
+        <Grid RowDefinitions="Auto, Auto">
+            <Frame CornerRadius="0" BackgroundColor="{StaticResource Primary}" 
+               HasShadow="True" HeightRequest="65"
+               Padding="0, 10" BorderColor="{StaticResource Primary}">
+                <Grid VerticalOptions="Center" HeightRequest="50" Padding="10, 0">
+                    <ImageButton Source="dotsmenu" HeightRequest="25" WidthRequest="25"
+                             HorizontalOptions="End" Margin="10, 0">
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                        </ImageButton.Behaviors>
+                    </ImageButton>
+                    <Label Text="Available Tickets" HorizontalOptions="Center" 
+                       VerticalOptions="Center" FontSize="20"
+                       FontFamily="BarlowRegular"/>
+
+                    <ImageButton Source="leftchevron" HeightRequest="25" WidthRequest="25"
+                             HorizontalOptions="Start" Margin="10, 0">
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                        </ImageButton.Behaviors>
+                    </ImageButton>
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="1">
+                <Path Data="M 209.79371643066406 478.7085266113281 L 209.79371643066406 270.2857360839844 L 693.8199462890625 270.2857360839844 L 693.8199462890625 477.0549621582031 C 545.6290283203125 552.7761840820312 384.2869567871094 553.327392578125 209.79371643066406 478.7085266113281 Z "
+                  Aspect="Fill" Fill="{StaticResource Primary}"
+                  HeightRequest="200" Margin="0, -1"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 50">
+                    <VerticalStackLayout>
+                        <Label Text="JKTA, ID" FontSize="25"/>
+                        <HorizontalStackLayout>
+                            <Label Text="Jakarta, " FontSize="10"/>
+                            <Label Text="21 March 2022" FontSize="10"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <Line X2="100" StrokeDashArray="3, 1"
+                      WidthRequest="80" StrokeDashOffset="1" StrokeThickness="2.5"
+                      Stroke="{StaticResource White}" VerticalOptions="Center"
+                      Margin="10, 20"/>
+
+                    <VerticalStackLayout>
+                        <Label Text="TYOA, JP" FontSize="25"/>
+                        <HorizontalStackLayout>
+                            <Label Text="Tokyo, " FontSize="10"/>
+                            <Label Text="21 March 2022" FontSize="10"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                </HorizontalStackLayout>
+            </Grid>
+        </Grid>
+        
+        <!-- Tickets List -->
+        <VerticalStackLayout Margin="20" HeightRequest="530" 
+                             VerticalOptions="End" Spacing="20">
+            
+            <Frame Padding="0" HeightRequest="120" BorderColor="{x:Null}"
+                   WidthRequest="190" CornerRadius="20">
+
+                <Grid RowDefinitions="*, Auto, *">
+                    
+                    <Grid Grid.RowSpan="3" ColumnDefinitions="1.5*, Auto, *">
+                        <VerticalStackLayout>
+                            <Grid ColumnDefinitions="Auto, *, Auto"
+                                  Margin="20" HeightRequest="10" VerticalOptions="Start">
+                                <VerticalStackLayout>
+                                    <Label Text="JKTA, ID" FontFamily="BarlowSemiBold"
+                                           TextColor="{StaticResource Primary}" FontSize="15"/>
+                                    <Label Text="CGK"
+                                           TextColor="{StaticResource Tertiary}" FontSize="8"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1">
+                                    <Line X2="80" WidthRequest="50" HeightRequest="1"
+                                          Stroke="{StaticResource Primary}"
+                                          VerticalOptions="End" Margin="5, 10"/>
+                                    <Label Text="14h 15m (1transit)" FontSize="6"
+                                           HorizontalOptions="Center" TextColor="{StaticResource Tertiary}"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="2">
+                                    <Label Text="JKTA, ID" FontFamily="BarlowSemiBold"
+                                           TextColor="{StaticResource Primary}" FontSize="15"/>
+                                    <Label Text="CGK"
+                                           TextColor="{StaticResource Tertiary}" FontSize="8"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                                
+                            </Grid>
+
+                            <VerticalStackLayout Spacing="-20" Margin="20, 15">
+                                <Label Text="Name of Airlines" TextColor="{StaticResource Primary}"
+                                       FontSize="16" FontFamily="BarlowSemiBold"/>
+                                <Label Text="luggage max 30kg - on board dinner"
+                                       FontSize="6" TextColor="{StaticResource Tertiary}"/>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+
+                        <Line Grid.Column="1"
+                              X1="0" Y1="180" X2="0" Y2="0"
+                              StrokeDashArray="2, 1" WidthRequest="1"
+                              StrokeDashOffset="2" StrokeThickness="4"
+                              Stroke="{StaticResource Tertiary}"/>
+
+                        <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+                            <HorizontalStackLayout HorizontalOptions="Center"
+                                                   WidthRequest="100">
+                                <Label Text="800 " TextColor="{StaticResource Accent}"
+                                       FontSize="24" FontFamily="BarlowSemiBold"/>
+                                <Label Text="USD" TextColor="{StaticResource Accent}"
+                                       FontSize="24" FontFamily="BarlowSemiBold"/>
+                            </HorizontalStackLayout>
+
+                            <Button Text="read details" BackgroundColor="{StaticResource Primary}"
+                                    WidthRequest="100" HeightRequest="20" CornerRadius="20"
+                                    Padding="0" FontSize="10" FontFamily="BarlowBold" Margin="2"
+                                    HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Path Grid.Row="1"
+                          Data="M 1.3285494937249204e-14 216.96859741210938 A 216.96859741210938 216.96859741210938 0 0 1 -3.985648481174761e-14 -216.96859741210938L0 0 Z"
+                          Aspect="Fill" Fill="{StaticResource Secondary}" Stroke="{StaticResource Secondary}"
+                          WidthRequest="12.5" HeightRequest="25"
+                          HorizontalOptions="End"/>
+
+                    <Path Grid.Row="1"
+                          Data="M -2.8813035263903705e-14 -156.85086059570312 A 156.85086059570312 156.85086059570312 0 0 1 4.802172656921677e-14 156.85086059570312L0 0 Z"
+                          Aspect="Fill" Fill="{StaticResource Secondary}" Stroke="{StaticResource Secondary}"
+                          WidthRequest="12.5" HeightRequest="25"
+                          HorizontalOptions="Start"/>
+                </Grid>
+            </Frame>
+
+            <Frame Padding="0" HeightRequest="120" BorderColor="{x:Null}"
+                   WidthRequest="190" CornerRadius="20">
+
+                <Grid RowDefinitions="*, Auto, *">
+
+                    <Grid Grid.RowSpan="3" ColumnDefinitions="1.5*, Auto, *">
+                        <VerticalStackLayout>
+                            <Grid ColumnDefinitions="Auto, *, Auto"
+                                  Margin="20" HeightRequest="10" VerticalOptions="Start">
+                                <VerticalStackLayout>
+                                    <Label Text="JKTA, ID" FontFamily="BarlowSemiBold"
+                                           TextColor="{StaticResource Primary}" FontSize="15"/>
+                                    <Label Text="CGK"
+                                           TextColor="{StaticResource Tertiary}" FontSize="8"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1">
+                                    <Line X2="80" WidthRequest="50" HeightRequest="1"
+                                          Stroke="{StaticResource Primary}"
+                                          VerticalOptions="End" Margin="5, 10"/>
+                                    <Label Text="14h 15m (1transit)" FontSize="6"
+                                           HorizontalOptions="Center" TextColor="{StaticResource Tertiary}"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="2">
+                                    <Label Text="JKTA, ID" FontFamily="BarlowSemiBold"
+                                           TextColor="{StaticResource Primary}" FontSize="15"/>
+                                    <Label Text="CGK"
+                                           TextColor="{StaticResource Tertiary}" FontSize="8"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+
+                            </Grid>
+
+                            <VerticalStackLayout Spacing="-20" Margin="20, 15">
+                                <Label Text="Name of Airlines" TextColor="{StaticResource Primary}"
+                                       FontSize="16" FontFamily="BarlowSemiBold"/>
+                                <Label Text="luggage max 30kg - on board dinner"
+                                       FontSize="6" TextColor="{StaticResource Tertiary}"/>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+
+                        <Line Grid.Column="1"
+                              X1="0" Y1="180" X2="0" Y2="0"
+                              StrokeDashArray="2, 1" WidthRequest="1"
+                              StrokeDashOffset="2" StrokeThickness="4"
+                              Stroke="{StaticResource Tertiary}"/>
+
+                        <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+                            <HorizontalStackLayout HorizontalOptions="Center"
+                                                   WidthRequest="100">
+                                <Label Text="800 " TextColor="{StaticResource Accent}"
+                                       FontSize="24" FontFamily="BarlowSemiBold"/>
+                                <Label Text="USD" TextColor="{StaticResource Accent}"
+                                       FontSize="24" FontFamily="BarlowSemiBold"/>
+                            </HorizontalStackLayout>
+
+                            <Button Text="read details" BackgroundColor="{StaticResource Primary}"
+                                    WidthRequest="100" HeightRequest="20" CornerRadius="20"
+                                    Padding="0" FontSize="10" FontFamily="BarlowBold" Margin="2"
+                                    HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Path Grid.Row="1"
+                          Data="M 1.3285494937249204e-14 216.96859741210938 A 216.96859741210938 216.96859741210938 0 0 1 -3.985648481174761e-14 -216.96859741210938L0 0 Z"
+                          Aspect="Fill" Fill="{StaticResource Secondary}" Stroke="{StaticResource Secondary}"
+                          WidthRequest="12.5" HeightRequest="25"
+                          HorizontalOptions="End"/>
+
+                    <Path Grid.Row="1"
+                          Data="M -2.8813035263903705e-14 -156.85086059570312 A 156.85086059570312 156.85086059570312 0 0 1 4.802172656921677e-14 156.85086059570312L0 0 Z"
+                          Aspect="Fill" Fill="{StaticResource Secondary}" Stroke="{StaticResource Secondary}"
+                          WidthRequest="12.5" HeightRequest="25"
+                          HorizontalOptions="Start"/>
+                </Grid>
+            </Frame>
+
+
+            <Frame Padding="0" HeightRequest="120" BorderColor="{x:Null}"
+                   WidthRequest="190" CornerRadius="20">
+
+                <Grid RowDefinitions="*, Auto, *">
+
+                    <Grid Grid.RowSpan="3" ColumnDefinitions="1.5*, Auto, *">
+                        <VerticalStackLayout>
+                            <Grid ColumnDefinitions="Auto, *, Auto"
+                                  Margin="20" HeightRequest="10" VerticalOptions="Start">
+                                <VerticalStackLayout>
+                                    <Label Text="JKTA, ID" FontFamily="BarlowSemiBold"
+                                           TextColor="{StaticResource Primary}" FontSize="15"/>
+                                    <Label Text="CGK"
+                                           TextColor="{StaticResource Tertiary}" FontSize="8"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1">
+                                    <Line X2="80" WidthRequest="50" HeightRequest="1"
+                                          Stroke="{StaticResource Primary}"
+                                          VerticalOptions="End" Margin="5, 10"/>
+                                    <Label Text="14h 15m (1transit)" FontSize="6"
+                                           HorizontalOptions="Center" TextColor="{StaticResource Tertiary}"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="2">
+                                    <Label Text="JKTA, ID" FontFamily="BarlowSemiBold"
+                                           TextColor="{StaticResource Primary}" FontSize="15"/>
+                                    <Label Text="CGK"
+                                           TextColor="{StaticResource Tertiary}" FontSize="8"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+
+                            </Grid>
+
+                            <VerticalStackLayout Spacing="-20" Margin="20, 15">
+                                <Label Text="Name of Airlines" TextColor="{StaticResource Primary}"
+                                       FontSize="16" FontFamily="BarlowSemiBold"/>
+                                <Label Text="luggage max 30kg - on board dinner"
+                                       FontSize="6" TextColor="{StaticResource Tertiary}"/>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+
+                        <Line Grid.Column="1"
+                              X1="0" Y1="180" X2="0" Y2="0"
+                              StrokeDashArray="2, 1" WidthRequest="1"
+                              StrokeDashOffset="2" StrokeThickness="4"
+                              Stroke="{StaticResource Tertiary}"/>
+
+                        <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+                            <HorizontalStackLayout HorizontalOptions="Center"
+                                                   WidthRequest="100">
+                                <Label Text="800 " TextColor="{StaticResource Accent}"
+                                       FontSize="24" FontFamily="BarlowSemiBold"/>
+                                <Label Text="USD" TextColor="{StaticResource Accent}"
+                                       FontSize="24" FontFamily="BarlowSemiBold"/>
+                            </HorizontalStackLayout>
+
+                            <Button Text="read details" BackgroundColor="{StaticResource Primary}"
+                                    WidthRequest="100" HeightRequest="20" CornerRadius="20"
+                                    Padding="0" FontSize="10" FontFamily="BarlowBold" Margin="2"
+                                    HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Path Grid.Row="1"
+                          Data="M 1.3285494937249204e-14 216.96859741210938 A 216.96859741210938 216.96859741210938 0 0 1 -3.985648481174761e-14 -216.96859741210938L0 0 Z"
+                          Aspect="Fill" Fill="{StaticResource Secondary}" Stroke="{StaticResource Secondary}"
+                          WidthRequest="12.5" HeightRequest="25"
+                          HorizontalOptions="End"/>
+
+                    <Path Grid.Row="1"
+                          Data="M -2.8813035263903705e-14 -156.85086059570312 A 156.85086059570312 156.85086059570312 0 0 1 4.802172656921677e-14 156.85086059570312L0 0 Z"
+                          Aspect="Fill" Fill="{StaticResource Secondary}" Stroke="{StaticResource Secondary}"
+                          WidthRequest="12.5" HeightRequest="25"
+                          HorizontalOptions="Start"/>
+                </Grid>
+            </Frame>
+
+            <Frame Padding="0" HeightRequest="120" BorderColor="{x:Null}"
+                   WidthRequest="190" CornerRadius="20">
+
+                <Grid RowDefinitions="*, Auto, *">
+
+                    <Grid Grid.RowSpan="3" ColumnDefinitions="1.5*, Auto, *">
+                        <VerticalStackLayout>
+                            <Grid ColumnDefinitions="Auto, *, Auto"
+                                  Margin="20" HeightRequest="10" VerticalOptions="Start">
+                                <VerticalStackLayout>
+                                    <Label Text="JKTA, ID" FontFamily="BarlowSemiBold"
+                                           TextColor="{StaticResource Primary}" FontSize="15"/>
+                                    <Label Text="CGK"
+                                           TextColor="{StaticResource Tertiary}" FontSize="8"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="1">
+                                    <Line X2="80" WidthRequest="50" HeightRequest="1"
+                                          Stroke="{StaticResource Primary}"
+                                          VerticalOptions="End" Margin="5, 10"/>
+                                    <Label Text="14h 15m (1transit)" FontSize="6"
+                                           HorizontalOptions="Center" TextColor="{StaticResource Tertiary}"/>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Column="2">
+                                    <Label Text="JKTA, ID" FontFamily="BarlowSemiBold"
+                                           TextColor="{StaticResource Primary}" FontSize="15"/>
+                                    <Label Text="CGK"
+                                           TextColor="{StaticResource Tertiary}" FontSize="8"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+
+                            </Grid>
+
+                            <VerticalStackLayout Spacing="-20" Margin="20, 15">
+                                <Label Text="Name of Airlines" TextColor="{StaticResource Primary}"
+                                       FontSize="16" FontFamily="BarlowSemiBold"/>
+                                <Label Text="luggage max 30kg - on board dinner"
+                                       FontSize="6" TextColor="{StaticResource Tertiary}"/>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+
+                        <Line Grid.Column="1"
+                              X1="0" Y1="180" X2="0" Y2="0"
+                              StrokeDashArray="2, 1" WidthRequest="1"
+                              StrokeDashOffset="2" StrokeThickness="4"
+                              Stroke="{StaticResource Tertiary}"/>
+
+                        <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+                            <HorizontalStackLayout HorizontalOptions="Center"
+                                                   WidthRequest="100">
+                                <Label Text="800 " TextColor="{StaticResource Accent}"
+                                       FontSize="24" FontFamily="BarlowSemiBold"/>
+                                <Label Text="USD" TextColor="{StaticResource Accent}"
+                                       FontSize="24" FontFamily="BarlowSemiBold"/>
+                            </HorizontalStackLayout>
+
+                            <Button Text="read details" BackgroundColor="{StaticResource Primary}"
+                                    WidthRequest="100" HeightRequest="20" CornerRadius="20"
+                                    Padding="0" FontSize="10" FontFamily="BarlowBold" Margin="2"
+                                    HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Path Grid.Row="1"
+                          Data="M 1.3285494937249204e-14 216.96859741210938 A 216.96859741210938 216.96859741210938 0 0 1 -3.985648481174761e-14 -216.96859741210938L0 0 Z"
+                          Aspect="Fill" Fill="{StaticResource Secondary}" Stroke="{StaticResource Secondary}"
+                          WidthRequest="12.5" HeightRequest="25"
+                          HorizontalOptions="End"/>
+
+                    <Path Grid.Row="1"
+                          Data="M -2.8813035263903705e-14 -156.85086059570312 A 156.85086059570312 156.85086059570312 0 0 1 4.802172656921677e-14 156.85086059570312L0 0 Z"
+                          Aspect="Fill" Fill="{StaticResource Secondary}" Stroke="{StaticResource Secondary}"
+                          WidthRequest="12.5" HeightRequest="25"
+                          HorizontalOptions="Start"/>
+                </Grid>
+            </Frame>
+
+        </VerticalStackLayout>
+
+        <Button Text="More" WidthRequest="70" HeightRequest="25"
+                BackgroundColor="{StaticResource Accent}"
+                Padding="0" FontSize="12" FontFamily="BarlowMedium"
+                VerticalOptions="End" Margin="10" CornerRadius="20"
+                ImageSource="downarrow" ContentLayout="Left, 2"/>
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,83 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EasyTravelApp"
+             x:Class="EasyTravelApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            
+            
+            <ControlTemplate x:Key="RadioButtonTemplate">
+
+                <Border Stroke="Transparent" BackgroundColor="Transparent">
+                    
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CheckedStates">
+                                <VisualState x:Name="Checked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="check" Property="Opacity" Value="1"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked">
+                                    <VisualState.Setters>
+                                        <Setter TargetName="check" Property="Opacity" Value="0"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+
+
+                    <Grid ColumnDefinitions="30, Auto">
+                        <Grid WidthRequest="22" HeightRequest="22"
+                          VerticalOptions="Center" HorizontalOptions="Center">
+                            <Ellipse x:Name="border_circle" StrokeThickness="5"
+                                 Stroke="{TemplateBinding BorderColor}" Fill="{StaticResource White}"
+                                 WidthRequest="18" HeightRequest="18"
+                                 HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Ellipse x:Name="check" Fill="{StaticResource Accent}" 
+                                 WidthRequest="8" HeightRequest="8"
+                                 VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </Grid>
+
+                        <Label Grid.Column="1" HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center" FontFamily="BarlowBold"
+                           Text="{TemplateBinding Content}" TextColor="{TemplateBinding TextColor}"/>
+                    </Grid>
+                    
+                </Border>
+                
+                
+            </ControlTemplate>
+
+            <Style TargetType="RadioButton" x:Key="RadioButtonStyle"
+                   ApplyToDerivedTypes="True">
+
+                <Setter Property="ControlTemplate" Value="{StaticResource RadioButtonTemplate}"/>
+                <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+                <Style.Triggers>
+                    <Trigger TargetType="RadioButton" Property="IsEnabled" Value="False">
+                        <Setter Property="BorderColor" Value="LightGray"/>
+                        <Setter Property="TextColor" Value="LightGray"/>
+                    </Trigger>
+                    <Trigger TargetType="RadioButton" Property="IsEnabled" Value="True">
+                        <Setter Property="BorderColor" Value="{StaticResource Primary}"/>
+                        <Setter Property="TextColor" Value="{StaticResource Primary}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+                
+                
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource White}"/>
+                <Setter Property="FontFamily" Value="BarlowBold"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

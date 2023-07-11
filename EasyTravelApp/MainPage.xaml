@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyTravelApp.MainPage"
+             Shell.NavBarIsVisible="False"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             FlowDirection="LeftToRight">
+
+    <Grid>
+        <Grid RowDefinitions="Auto, Auto, *">
+            
+            <Frame CornerRadius="0" BackgroundColor="{StaticResource Primary}" 
+               HasShadow="True" HeightRequest="65"
+               Padding="0, 10" BorderColor="{StaticResource Primary}">
+                <Grid VerticalOptions="Center" HeightRequest="50" Padding="10, 0">
+                    <ImageButton Source="notification" HeightRequest="25" WidthRequest="25"
+                             HorizontalOptions="End" Margin="10, 0">
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                        </ImageButton.Behaviors>
+                    </ImageButton>
+                    <Label Text="Easy Travel" HorizontalOptions="Center" 
+                       VerticalOptions="Center" FontSize="20"/>
+
+                    <ImageButton Source="menubars" HeightRequest="25" WidthRequest="25"
+                             HorizontalOptions="Start" Margin="10, 0">
+                        <ImageButton.Behaviors>
+                            <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                        </ImageButton.Behaviors>
+                    </ImageButton>
+                </Grid>
+            </Frame>
+
+            <Grid Grid.Row="1">
+                <Path Data="M 209.79371643066406 478.7085266113281 L 209.79371643066406 270.2857360839844 L 693.8199462890625 270.2857360839844 L 693.8199462890625 477.0549621582031 C 545.6290283203125 552.7761840820312 384.2869567871094 553.327392578125 209.79371643066406 478.7085266113281 Z "
+                  Aspect="Fill" Fill="{StaticResource Primary}"
+                  HeightRequest="200" Margin="0, -1"/>
+
+                <VerticalStackLayout VerticalOptions="Center" Margin="30, 0">
+                    <Label Text="Hi, Amanda" FontSize="30"
+                       FontFamily="BarlowMeduim"/>
+                    <Label FontFamily="BarlowBold" FontSize="14">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Travel Points "/>
+                                <Span Text="1500" TextColor="{StaticResource Accent}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </VerticalStackLayout>
+            </Grid>
+
+            <VerticalStackLayout Grid.Row="2" Margin="10, 20">
+                <Frame BackgroundColor="{StaticResource Secondary}" Padding="0"
+                   HeightRequest="50" BorderColor="{x:Null}">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Entry Placeholder="Search ticket, hotel, recommendation?"
+                           PlaceholderColor="{StaticResource Tertiary}"
+                           FontFamily="BarlowMeduim" VerticalOptions="Center"
+                           Margin="15, 0" TextColor="{StaticResource Primary}"/>
+
+                        <ImageButton Grid.Column="1" Source="loupe"
+                                 WidthRequest="25" HeightRequest="25"
+                                 Margin="15, 0">
+                            <ImageButton.Behaviors>
+                                <toolkit:IconTintColorBehavior TintColor="{StaticResource Primary}"/>
+                            </ImageButton.Behaviors>
+                        </ImageButton>
+                    </Grid>
+                </Frame>
+
+
+                <HorizontalStackLayout Margin="0, 20" Spacing="10">
+
+                    <Frame HeightRequest="90" WidthRequest="90"
+                       BackgroundColor="{StaticResource Primary}" Padding="0">
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Source="plane" WidthRequest="50" HeightRequest="50">
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                                </Image.Behaviors>
+                            </Image>
+                            <Label Text="Flight" FontSize="15"
+                               HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame HeightRequest="90" WidthRequest="90"
+                       BackgroundColor="{StaticResource Primary}" Padding="0">
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Source="train" WidthRequest="50" HeightRequest="50">
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                                </Image.Behaviors>
+                            </Image>
+                            <Label Text="Train" FontSize="15"
+                               HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame HeightRequest="90" WidthRequest="90"
+                       BackgroundColor="{StaticResource Primary}" Padding="0">
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Source="hotels" WidthRequest="50" HeightRequest="50">
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                                </Image.Behaviors>
+                            </Image>
+                            <Label Text="Hotel" FontSize="15"
+                               HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame HeightRequest="90" WidthRequest="90"
+                       BackgroundColor="{StaticResource Primary}" Padding="0">
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Source="dotsmore" WidthRequest="50" HeightRequest="50">
+                                <Image.Behaviors>
+                                    <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                                </Image.Behaviors>
+                            </Image>
+                            <Label Text="More" FontSize="15"
+                               HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Frame>
+
+                </HorizontalStackLayout>
+
+
+                <BoxView HeightRequest="0.5" Color="{StaticResource Tertiary}" Margin="5, 0"/>
+
+                <Grid Margin="0, 10">
+                    <Label Text="Don't missed this promo"
+                       TextColor="{StaticResource Primary}" FontSize="12"/>
+
+                    <Button Text="view all" CornerRadius="45"
+                        BackgroundColor="{StaticResource Primary}"
+                        HeightRequest="30" WidthRequest="90"
+                        HorizontalOptions="End" FontSize="10" Padding="0"
+                        FontFamily="BarlowBold"/>
+                </Grid>
+
+                <HorizontalStackLayout Spacing="10" Margin="0, 5">
+
+                    <Frame Padding="0" BackgroundColor="{StaticResource Secondary}"
+                       HeightRequest="110" WidthRequest="190" CornerRadius="12"
+                       BorderColor="{x:Null}">
+
+                        <Grid ColumnDefinitions="2*, Auto, *">
+
+                            <VerticalStackLayout VerticalOptions="Center" Margin="10"
+                                             Spacing="10">
+                                <Label Text="Domestic Flight"
+                                   TextColor="{StaticResource Tertiary}" FontSize="12"/>
+
+                                <HorizontalStackLayout>
+                                    <Label Text="use code: " FontSize="8"
+                                       TextColor="{StaticResource Tertiary}" VerticalOptions="Center"/>
+
+                                    <Label Text="LOCALFLY" FontSize="12"
+                                       TextColor="{StaticResource Tertiary}"/>
+                                </HorizontalStackLayout>
+                                <BoxView HeightRequest="1" Color="{StaticResource Tertiary}"/>
+                            </VerticalStackLayout>
+
+                            <Grid Grid.Column="1">
+                                <Line Y1="180"
+                                  StrokeDashArray="1, 1" WidthRequest="1.1"
+                                  StrokeDashOffset="2" StrokeThickness="4"
+                                  Stroke="{StaticResource Tertiary}"/>
+
+                                <Path Data="M 239.354248046875 0 A 239.354248046875 239.354248046875 0 0 1 -239.354248046875 2.931244250147305e-14L0 0 Z"
+                                  Aspect="Fill" WidthRequest="20" HeightRequest="10"
+                                  Fill="{StaticResource White}" Stroke="{StaticResource White}"
+                                  VerticalOptions="Start"/>
+
+                                <Path Data="M -266.4221496582031 3.262730255242097e-14 A 266.4221496582031 266.4221496582031 0 0 1 266.4221496582031 -6.525460510484193e-14L0 0 Z"
+                                  Aspect="Fill" WidthRequest="20" HeightRequest="10"
+                                  Fill="{StaticResource White}" Stroke="{StaticResource White}"
+                                  VerticalOptions="End"/>
+                            </Grid>
+
+                            <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+                                <Label Text="20%" FontSize="20"
+                                   TextColor="{StaticResource Tertiary}"
+                                   HorizontalTextAlignment="Center"/>
+
+                                <Button Text="Read Details"
+                                    BackgroundColor="{StaticResource Primary}"
+                                    HeightRequest="20" Padding="5"
+                                    FontSize="7" FontFamily="BarlowBold"
+                                    HorizontalOptions="Start" CornerRadius="3"/>
+
+                                <Label Text="T &amp; C Applied" FontSize="6"
+                                   TextColor="{StaticResource Tertiary}" Margin="1"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                    </Frame>
+
+                    <Frame Padding="0" BackgroundColor="{StaticResource Secondary}"
+                       HeightRequest="110" WidthRequest="190" CornerRadius="12"
+                       BorderColor="{x:Null}">
+
+                        <Grid ColumnDefinitions="2*, Auto, *">
+
+                            <VerticalStackLayout VerticalOptions="Center" Margin="10"
+                                             Spacing="10">
+                                <Label Text="International Flight"
+                                   TextColor="{StaticResource Tertiary}" FontSize="10"/>
+
+                                <HorizontalStackLayout>
+                                    <Label Text="use code: " FontSize="8"
+                                       TextColor="{StaticResource Tertiary}" VerticalOptions="Center"/>
+
+                                    <Label Text="INTRFLY" FontSize="12"
+                                       TextColor="{StaticResource Tertiary}"/>
+                                </HorizontalStackLayout>
+                                <BoxView HeightRequest="1" Color="{StaticResource Tertiary}"/>
+                            </VerticalStackLayout>
+
+                            <Grid Grid.Column="1">
+                                <Line Y1="180"
+                                  StrokeDashArray="1, 1" WidthRequest="1.1"
+                                  StrokeDashOffset="2" StrokeThickness="4"
+                                  Stroke="{StaticResource Tertiary}"/>
+
+                                <Path Data="M 239.354248046875 0 A 239.354248046875 239.354248046875 0 0 1 -239.354248046875 2.931244250147305e-14L0 0 Z"
+                                  Aspect="Fill" WidthRequest="20" HeightRequest="10"
+                                  Fill="{StaticResource White}" Stroke="{StaticResource White}"
+                                  VerticalOptions="Start"/>
+
+                                <Path Data="M -266.4221496582031 3.262730255242097e-14 A 266.4221496582031 266.4221496582031 0 0 1 266.4221496582031 -6.525460510484193e-14L0 0 Z"
+                                  Aspect="Fill" WidthRequest="20" HeightRequest="10"
+                                  Fill="{StaticResource White}" Stroke="{StaticResource White}"
+                                  VerticalOptions="End"/>
+                            </Grid>
+
+                            <VerticalStackLayout Grid.Column="2" VerticalOptions="Center">
+                                <Label Text="15%" FontSize="20"
+                                   TextColor="{StaticResource Tertiary}"
+                                   HorizontalTextAlignment="Center"/>
+
+                                <Button Text="Read Details"
+                                    BackgroundColor="{StaticResource Primary}"
+                                    HeightRequest="20" Padding="5"
+                                    FontSize="7" FontFamily="BarlowBold"
+                                    HorizontalOptions="Start" CornerRadius="3"/>
+
+                                <Label Text="T &amp; C Applied" FontSize="6"
+                                   TextColor="{StaticResource Tertiary}" Margin="1"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                    </Frame>
+
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout Margin="5, 10" Spacing="5">
+                    <Label Text="Our Recommendation"
+                       TextColor="{StaticResource Primary}" FontSize="12"/>
+
+                    <Frame Padding="15" BackgroundColor="{StaticResource Primary}"
+                       HeightRequest="200">
+
+                        <Grid ColumnDefinitions="Auto, *">
+                            <!-- Image Box -->
+                            <Frame WidthRequest="120" CornerRadius="0">
+
+                            </Frame>
+                            <Grid Grid.Column="1" RowDefinitions="Auto, Auto, *" Margin="10, 0">
+                                <VerticalStackLayout>
+                                    <Label Text="Name Destination" FontSize="16"/>
+                                    <HorizontalStackLayout>
+                                        <Image Source="pin" WidthRequest="15" HeightRequest="20"
+                                           VerticalOptions="Center">
+                                            <Image.Behaviors>
+                                                <toolkit:IconTintColorBehavior TintColor="{StaticResource White}"/>
+                                            </Image.Behaviors>
+                                        </Image>
+                                        <Label Text="City, Country" FontSize="10" Margin="5, 0"
+                                           FontFamily="BarlowRegular" VerticalOptions="Center"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+
+                                <HorizontalStackLayout HorizontalOptions="End"
+                                                   VerticalOptions="Center" Spacing="2">
+                                    <Image Source="star" WidthRequest="20" HeightRequest="20">
+                                        <Image.Behaviors>
+                                            <toolkit:IconTintColorBehavior TintColor="{StaticResource Accent}"/>
+                                        </Image.Behaviors>
+                                    </Image>
+                                    <Label Text="4,5" FontSize="15"/>
+                                </HorizontalStackLayout>
+
+                                <BoxView Grid.Row="1" HeightRequest="1" Color="{StaticResource Secondary}"
+                                     Margin="2"/>
+
+                                <Label Grid.Row="2" FontSize="10"
+                                   Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                   FontFamily="BarlowRegular"/>
+
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+
+        <Button Text="More" WidthRequest="70" HeightRequest="25"
+                BackgroundColor="{StaticResource Accent}"
+                Padding="0" FontSize="12" FontFamily="BarlowMedium"
+                VerticalOptions="End" Margin="10" CornerRadius="20"
+                ImageSource="downarrow" ContentLayout="Left, 2"/>
+    </Grid>
+
+</ContentPage>

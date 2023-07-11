@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EasyTravelApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EasyTravelApp"
+    Shell.FlyoutBehavior="Disabled"
+    FlowDirection="LeftToRight"
+    xmlns:views="clr-namespace:EasyTravelApp.Views">
+
+    <TabBar>
+        <Tab Icon="user">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Icon="envelope">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+        <Tab Icon="ticket">
+            <ShellContent ContentTemplate="{DataTemplate views:SelectedTicketView}"/>
+        </Tab>
+        <Tab Icon="securitypin">
+            <ShellContent ContentTemplate="{DataTemplate views:TicketsView}"/>
+        </Tab>
+        <Tab Icon="home">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+        </Tab>
+    </TabBar>
+
+</Shell>
